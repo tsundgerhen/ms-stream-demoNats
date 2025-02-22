@@ -1,0 +1,70 @@
+{
+    "alerts": [
+        {   
+            "title": "Alert 1",
+            "gifUrl": "https://example.com/alert.gif",
+            "soundUrl": "https://example.com/alert.mp3",
+            "mainText": "**[{amount}₮]** donation орж ирлээ.",
+            "minAmount": 1000,
+            "maxAmount": 19999,
+            "duration": 5,
+            "transition": "fade",
+            "textAlignment": "center",
+            "gifSettings": {
+                "size": 30,
+                "alignment": "center"
+            },
+            "soundSettings": {
+                "volume": 75
+            },
+            "textSettings": {
+                "fontSize": 24,
+                "fontColor": "#FFFFFF"
+            }
+        },
+        {   
+            "title": "Alert 2",
+            "gifUrl": "https://example.com/alert.gif",
+            "soundUrl": "https://example.com/alert.mp3",
+            "mainText": "**[{amount}₮]** donation орж ирлээ.",
+            "minAmount": 20000,
+            "maxAmount": 99999,
+            "duration": 7,
+            "transition": "fade",
+            "textAlignment": "center",
+            "gifSettings": {
+                "size": 30,
+                "alignment": "center"
+            },
+            "soundSettings": {
+                "volume": 75
+            },
+            "textSettings": {
+                "fontSize": 24,
+                "fontColor": "#FFFFFF"
+            }
+        },
+        {   
+            "title": "Alert 3",
+            "gifUrl": "https://example.com/alert.gif",
+            "soundUrl": "https://example.com/alert.mp3",
+            "mainText": "**[{amount}₮]** donation орж ирлээ.",
+            "minAmount": 100000,
+            "maxAmount": 0,
+            "duration": 10,
+            "transition": "fade",
+            "textAlignment": "center",
+            "gifSettings": {
+                "size": 30,
+                "alignment": "center"
+            },
+            "soundSettings": {
+                "volume": 75
+            },
+            "textSettings": {
+                "fontSize": 24,
+                "fontColor": "#FFFFFF"
+            }
+        }
+    ]
+}
