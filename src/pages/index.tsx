@@ -1,5 +1,7 @@
-import Image from "next/image";
+import { useEffect, useRef } from "react";
+// import { io, Socket } from "socket.io-client";
 import { Geist, Geist_Mono } from "next/font/google";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,9 +14,44 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
+  // const socketRef = useRef<Socket | null>(null);
+
+  // const initSocket = async () => {
+  //   try {
+  //     const socketUrl = process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:3000";
+      
+  //     // Fix: Use full URL for API call
+  //     const response = await fetch(`${socketUrl}/api/socket`); // Full URL to the API
+  //     if (!response.ok) {
+  //       throw new Error("Failed to initialize socket");
+  //     }
+
+  //     // Initialize the socket connection after the API call is successful
+  //     if (!socketRef.current) {
+  //       socketRef.current = io(socketUrl, {
+  //         path: "/socket.io",  // Ensure the path matches the server configuration
+  //         transports: ["websocket"],  // Use WebSocket as transport to avoid polling
+  //       });
+
+  //       socketRef.current.on("connect", () => {
+  //         console.log("✅ Socket connected");
+  //       });
+  //       socketRef.current.on("disconnect", () => {
+  //         console.log("❌ Socket disconnected");
+  //       });
+  //     }
+  //   } catch (err) {
+  //     console.error("🚨 Socket API init failed:", err);
+  //   }
+  // };
+
+  useEffect(() => {
+    // initSocket(); // Initialize socket when the component mounts
+  }, []);
+
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
+      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-transparent`}
     >
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
@@ -29,7 +66,7 @@ export default function Home() {
           <li className="mb-2">
             Get started by editing{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
+              pages/index.tsx
             </code>
             .
           </li>
