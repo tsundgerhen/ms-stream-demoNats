@@ -1,78 +1,28 @@
-"use client";
-import Header from "@/components/global/header";
-import {
-  Box,
-  Stack,
-  Card,
-  Heading,
-  HStack,
-  Badge,
-  Image,
-} from "@chakra-ui/react";
+'use client';
 
-export default function AlertBox() {
-  const donations = [
-    {
-      id: "smallDonation",
-      label: "Small Donation",
-      amount: 1000,
-      duration: 3,
-      assets: [
-        { label: "GIF", src: "/userProfile.jpg" },
-        { label: "Audio", src: "/userProfile.jpg" },
-      ],
-    },
-    {
-      id: "mediumDonation",
-      label: "Medium Donation",
-      amount: 20000,
-      duration: 5,
-      assets: [
-        { label: "GIF", src: "/spiningCat.gif" },
-        { label: "Audio", src: "/spinningcat.mp3" },
-      ],
-    },
-    {
-      id: "bigDonation",
-      label: "Big Donation",
-      amount: 100000,
-      duration: 8,
-      assets: [
-        { label: "GIF", src: "/rickroll.gif" },
-        { label: "Audio", src: "/Rick-Roll-Sound.mp3" },
-      ],
-    },
-  ];
+import { Box, Button, Text } from '@chakra-ui/react';
+import alertData from '@/components/alert.json';
+import { useState } from 'react';
+import Header from './header';
+import AlertList from './alertList';
+import { Alert } from '@/types/alertType';
+
+export default function AlertPage() {
+  const [alerts, setAlerts] = useState<Alert[]>(alertData.alerts);
 
   return (
-    <>
+    <Box display={'flex'} flexDir={'column'} alignItems={'center'} w="100%" minH="100vh">
       <Header />
-      <Stack>
-        {donations.map((donation) => (
-          <Card.Root
-            key={donation.id}  // Add the unique key prop here
-            flexDirection="row"
-            overflow="hidden"
-            maxW="xl"
-          >
-            <Image
-              objectFit="cover"
-              maxW="200px"
-              src={donation.assets[0].src}
-              alt={donation.label + "GIF"}
-            />
-            <Box>
-              <Card.Body>
-                <Card.Title mb="2">{donation.label}</Card.Title>
-                <Stack mt="4">
-                  <Badge>{donation.amount}</Badge>
-                  <Badge>{donation.duration}</Badge>
-                </Stack>
-              </Card.Body>
-            </Box>
-          </Card.Root>
-        ))}
-      </Stack>
-    </>
+      <Box
+        bg="#2B303E"
+        w="100%"
+        flex="1" // Takes up remaining space instead of forcing 100vh
+        display="flex"
+        alignItems="start"
+        justifyContent="center"
+      >
+        {alerts.length > 0 ? <AlertList alerts={alerts} /> : <Text color="black">No alerts available</Text>}
+      </Box>
+    </Box>
   );
 }

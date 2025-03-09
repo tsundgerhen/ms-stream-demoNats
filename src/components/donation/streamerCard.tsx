@@ -19,10 +19,8 @@ export default function StreamerCard() {
       p={8}
       rounded="lg"
       alignItems="center"
-      bgGradient="to-t"
-      gradientFrom="red.800"
-      gradientTo="gray.900"
-      boxShadow={"0 0 15px rgba(0, 0, 0, 0.5)"}
+      bgGradient="linear(to-t, red.800, gray.900)"
+      boxShadow="0 0 15px rgba(0, 0, 0, 0.5)"
     >
       <Box display="flex" justifyContent="center" alignItems="center" w="full">
         <Image
@@ -35,7 +33,7 @@ export default function StreamerCard() {
         />
       </Box>
       <VStack textAlign="center" mt={4}>
-        <Text fontSize="4xl" fontWeight="bold" color="white" textShadow="lg">
+        <Text fontSize="4xl" fontWeight="bold" color="white">
           Tsundgerhen
         </Text>
       </VStack>
@@ -47,7 +45,7 @@ export default function StreamerCard() {
           rel="noopener noreferrer" // Security measure
           _hover={{ textDecoration: "underline", cursor: "pointer" }}
         >
-          <Text maxW="12rem" truncate color="white">
+          <Text maxW="12rem" isTruncated color="white">
             https://youtube.com/@tsundgerhen-kiun6969?si=AIqdJXdPUNkzbQ_g
           </Text>
         </Link>

@@ -5,7 +5,7 @@ import { connect, JSONCodec, NatsConnection, Subscription } from "nats.ws";
 import { Image, Box, Text } from "@chakra-ui/react";
 
 // Ensure NATS_URL is defined in your `.env.local`
-const NATS_URL = process.env.NEXT_PUBLIC_NATS_URL || "ws://your-nats-server:4222"; // Fallback if undefined
+const NATS_URL = /*process.env.NEXT_PUBLIC_NATS_URL ||*/ "wss://demo.nats.io:8443"; // Fallback if undefined
 
 async function setupNATS() {
   try {

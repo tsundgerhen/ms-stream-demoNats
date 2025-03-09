@@ -5,6 +5,12 @@
 :root {
   --background: transparent;
   --foreground: transparent;
+  --alertBoxBorder: gray.800;
+  --alertBoxSubText: gray.500;
+  --alertBoxMainText: gray.500;
+  --alertBoxMainText: gray.500;
+  --alertBoxIcon: teal.600;
+  --alertBoxSelectedBackground: teal.700;
 }
 
 @media (prefers-color-scheme: dark) {

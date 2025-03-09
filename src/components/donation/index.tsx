@@ -10,7 +10,7 @@ import DonationBox from "./donationBox";
 import { Box, Flex } from "@chakra-ui/react";
 
 // Use a WebSocket URL instead of `nats://`
-const NATS_URL = process.env.NEXT_PUBLIC_NATS_URL; 
+const NATS_URL = /*process.env.NEXT_PUBLIC_NATS_URL ||*/ "wss://demo.nats.io:8443";
 
 // Function to set up the NATS connection
 async function setupNATS() {
@@ -130,9 +130,7 @@ export default function DonationIndex() {
       display="flex"
       flexDirection="column"
       alignItems="center"
-      bgGradient="to-b"
-      gradientFrom="red.800"
-      gradientTo="gray.900"
+      bgGradient="linear(to-b, red.800, gray.900)"
     >
       <Header />
 
